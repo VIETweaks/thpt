@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -49,6 +50,15 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
+    base: '/thpt/', // 👈 Thêm dòng này để GitHub Pages load đúng
+  plugins: [react()],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      // Các alias khác giữ nguyên như bạn đã cấu hình
+    },
+  },
     build: {
       target: 'esnext',
       outDir: 'build',
